@@ -13,7 +13,9 @@ Check out from Github with git clone below command
 $git clone git@github.com:tmandala/bny_tics.git
 
 Once checkout , run following to for build and package.
+
 $ cd instructions-capture-service
+
 $ mvn clean package
  
 #Note: 99% of the times all test cases should be succeed, if any issues with test please run below
