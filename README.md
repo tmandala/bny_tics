@@ -17,6 +17,7 @@ $ cd instructions-capture-service
 $ mvn clean package
  
 #Note: 99% of the times all test cases should be succeed, if any issues with test please run below
+
 $ mvn clean package -DskipTests
 
 
