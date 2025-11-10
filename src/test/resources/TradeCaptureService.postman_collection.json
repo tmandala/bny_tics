@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "6aa11653-b2a6-4c85-8eee-799873d21565",
+		"name": "TradeCaptureService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4583420"
+	},
+	"item": [
+		{
+			"name": "GetCanonical",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/trades/6fb01baf-44f6-455e-8835-5e96ba76f292",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"trades",
+						"6fb01baf-44f6-455e-8835-5e96ba76f292"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trades",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": \"12345678\",\r\n  \"securityId\": \"AAPL\",\r\n  \"tradeType\": \"Buy\",\r\n  \"amount\": 1000,\r\n  \"timestamp\": \"2025-11-09T23:32:02.280Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/trades",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"trades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/WD/instructions-capture-service/src/test/resources/trade_instructions_json.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/trades/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"trades",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

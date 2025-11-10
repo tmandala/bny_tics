@@ -1,0 +1,33 @@
+spring:
+  docker:
+    compose:
+      enabled: false
+  application:
+    name: instructions-capture-service
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: instructions-capture-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring.json.trusted.packages: "com.example.instructions"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+app:
+  platform-id: P12345
+  kafka:
+    topics:
+      inbound: instructions.inbound
+      outbound: instructions.outbound
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v1/api-docs
